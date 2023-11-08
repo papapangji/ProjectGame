@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,7 +30,7 @@ public class mojimojijump extends JFrame implements ActionListener{
     
 public static void main(String[] args){
     mojimojijump mjmj = new mojimojijump();
-    mjmj.setSize(750, 800);
+    mjmj.setSize(1020,700);
     mjmj.setTitle("mojimojijump");
     mjmj.setVisible(true);
     mjmj.setLocationRelativeTo(null);
@@ -47,7 +48,7 @@ public void actionPerformed(ActionEvent e) {
         this.setLocationRelativeTo(null);
         this.remove(stg);
         this.add(d);
-        this.setSize(750,800);
+        this.setSize(1020,700);
         d.requestFocusInWindow();
         revalidate();
 

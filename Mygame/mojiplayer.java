@@ -14,6 +14,6 @@ public mojiplayer() {
 }
 public Rectangle2D getbound() {
     // System.out.println(x+""+y);
-        return (new Rectangle2D.Double(x+336, y+320, 70, 120));
+        return (new Rectangle2D.Double(x+7, 470, 80, 80));
     }
 }

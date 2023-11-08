@@ -31,7 +31,7 @@ public class Draw extends JPanel implements ActionListener{
     private int speed = 200;
     
     
-    java.net.URL imageURL = this.getClass().getResource("bg/bg2_1.jpg");
+    java.net.URL imageURL = this.getClass().getResource("bg/bgbg1.jpg");
     Image imageBg = new ImageIcon(imageURL).getImage();
     java.net.URL imageURL2 = this.getClass().getResource("bg/bg11.jpg");
     Image imageBg2 = new ImageIcon(imageURL2).getImage();
@@ -79,19 +79,19 @@ public class Draw extends JPanel implements ActionListener{
         this.setLayout(null);
         
         mjp.x = 0;
-        mjp.y = 275;
+        mjp.y = 450;
         
         
         this.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e){
 
                 if(e.getKeyCode() == KeyEvent.VK_A){
-                    if(mjp.x > -330){
+                    if(mjp.x > -5){
                         mjp.x -= 15;
                     }
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_D){
-                    if(mjp.x < 330){
+                    if(mjp.x < 920){
                          mjp.x += 15;
                     }
                    
@@ -174,17 +174,18 @@ public class Draw extends JPanel implements ActionListener{
         if(timec < 45){
             g.drawImage(imageBg2, 0, 0, getWidth(), getHeight(), this);
         }
-        g.drawImage(mjp.img,mjp.x,mjp.y,getWidth(),getHeight() ,this);
+        //g.drawRect(mjp.x+7, 470, 80, 80);
+        g.drawImage(mjp.img,mjp.x,mjp.y,100,100 ,this);
         g.setColor(Color.WHITE);
         g.setFont(new Font("Hobo Std", Font.HANGING_BASELINE, 30));
         g.drawString("SCORE : "+score,50 , 50);
-        g.drawString("Time : "+timec,560 , 50);
+        g.drawString("Time : "+timec,820 , 50);
         if(timec <= 0){
             g.drawString("END", 340, 400);
         }
         for(int i=0;i<mts.size();i++){
             potion m = mts.get(i);
-            g.drawImage(m.imgpt, m.getX(), m.getY(), 40, 55,this);
+            g.drawImage(m.imgpt, m.getX(), m.getY(), 45, 45,this);
 
             
         }

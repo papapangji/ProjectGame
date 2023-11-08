@@ -13,7 +13,7 @@ public class potion {
     public potion(){
         x = (int) ((Math.random() * 300) + 20);
         y = 0;
-        this.imgpt = new ImageIcon(getClass().getResource("/bg/majic1.png")).getImage();
+        this.imgpt = new ImageIcon(getClass().getResource("/bg/tomato.png")).getImage();
         runner.start();
 }
         private int potion = 3;
@@ -65,7 +65,7 @@ public Image getImage() {
     }
 
     public Rectangle2D getbound() {
-        // System.out.println(x+""+y);
+        //System.out.println(x+""+y);
         return (new Rectangle2D.Double(x, y, 45, 45));
     }
 }
