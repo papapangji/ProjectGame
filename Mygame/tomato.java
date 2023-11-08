@@ -5,12 +5,12 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-public class potion {
+public class tomato {
     public int x=(int) ((Math.random() * 300) + 20);
     public int y=0;
     public Image imgpt;
 
-    public potion(){
+    public tomato(){
         x = (int) ((Math.random() * 300) + 20);
         y = 0;
         this.imgpt = new ImageIcon(getClass().getResource("/bg/tomato.png")).getImage();

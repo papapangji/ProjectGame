@@ -15,20 +15,20 @@ import javax.swing.JPanel;
 
 public class Draw extends JPanel implements ActionListener{
 
-    startgame stg = new startgame();
-    mojiplayer mjp = new mojiplayer();
-    potion mt = new potion();
+    public startgame stg = new startgame();
+    public tomatoplayer mjp = new tomatoplayer();
+    public tomato mt = new tomato();
     public int score = 0;
     public int timec = 90;
     //wood w = new wood();
     
 
-    public static ArrayList<potion>mts = new ArrayList<potion>();
+    public static ArrayList<tomato>mts = new ArrayList<tomato>();
     // java.net.URL imgpotis = this.getClass().getResource("/bg/majic1.png");
     // Image imgpotis2 = new ImageIcon(imgpotis).getImage();
-    private int potionRl = 0;
-    private int potionINv = 150;
-    private int speed = 200;
+    private int tomatoRi = 0;
+    private int tomatoNv = 150;
+    //private int speed = 200;
     
     
     java.net.URL imageURL = this.getClass().getResource("bg/bgbg1.jpg");
@@ -102,17 +102,17 @@ public class Draw extends JPanel implements ActionListener{
         time.start();  
         timecount.start();  
     }
-    public void newpotion(){
-        potion newpotion = new potion();
-        mts.add(newpotion);
+    public void newtomato(){
+        tomato newtomato = new tomato();
+        mts.add(newtomato);
     }
 
     public void updategame(){
-        potionRl++;
-        // System.out.println(potionRl);
-        if(potionRl >= potionINv){
-            potionRl = 0;
-            potion poti = new potion();
+        tomatoRi++;
+        // System.out.println(tomatoRi);
+        if(tomatoRi >= tomatoNv){
+            tomatoRi = 0;
+            tomato poti = new tomato();
 
             poti.x = (int) (Math.random() * (getWidth() - 100));
             poti.y = 0;
@@ -123,7 +123,7 @@ public class Draw extends JPanel implements ActionListener{
             
         }
         for(int i=0;i<mts.size();i++){
-            potion potist = mts.get(i);
+            tomato potist = mts.get(i);
             potist.move();
         }
 
@@ -137,23 +137,6 @@ public class Draw extends JPanel implements ActionListener{
             }
         }
     }
-
-
-    // public Thread time = new Thread(new Runnable() {
-    //     public void run(){
-    //      while(true){
-    //          try{
-    //              Thread.sleep(100);
-    //          }
-    //          catch(Exception e){
-    //             System.out.println(e);
-    //          }
-    //          updategame();
-    //          repaint();
-             
-    //      }
-    //     } 
-    //  });
      
     
      public void render(){
@@ -164,7 +147,7 @@ public class Draw extends JPanel implements ActionListener{
             e.printStackTrace();
         }
      }
-     public static void potisplus(potion mt){
+     public static void potisplus(tomato mt){
         mts.add(mt);
      }
     @Override
@@ -179,30 +162,17 @@ public class Draw extends JPanel implements ActionListener{
         g.setColor(Color.WHITE);
         g.setFont(new Font("Hobo Std", Font.HANGING_BASELINE, 30));
         g.drawString("SCORE : "+score,50 , 50);
-        g.drawString("Time : "+timec,820 , 50);
+        g.drawString("Time : "+timec,800 , 50);
         if(timec <= 0){
-            g.drawString("END", 340, 400);
+            g.drawString("End Game", 450, 350);
         }
         for(int i=0;i<mts.size();i++){
-            potion m = mts.get(i);
+            tomato m = mts.get(i);
             g.drawImage(m.imgpt, m.getX(), m.getY(), 45, 45,this);
 
             
         }
-        // g.drawImage(w.imgwoods,w.x,w.y,getWidth()*3,getHeight()*3,this);
-        // g.setColor(Color.white);
-        // g.fillRect(250, 360, 100, 10);
-        // g.fillRect(450, 450, 100, 10);
-        // g.fillRect(200, 550, 100, 10);
-        // g.fillRect(300, 600, 100, 10);
-        // g.fillRect(400, 510, 100, 10);
-        // g.fillRect(150, 480, 100, 10);
-        // g.fillRect(530, 410, 100, 10);
-        // g.fillRect(510, 580, 100, 10);
-        // g.fillRect(370, 380, 100, 10);
-        // g.fillRect(375, 700, 100, 10);
-        // g.fillRect(100, 640, 100, 10);
-        //mjp.y += 1;
+        
     }
     @Override
     public void actionPerformed(ActionEvent e) {

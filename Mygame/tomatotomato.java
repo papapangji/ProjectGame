@@ -10,11 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class mojimojijump extends JFrame implements ActionListener{
+public class tomatotomato extends JFrame implements ActionListener{
     startgame stg = new startgame();
     Draw d = new Draw();
 
-    mojimojijump(){
+    tomatotomato(){
         
         // add(d);
         add(stg);
@@ -29,9 +29,9 @@ public class mojimojijump extends JFrame implements ActionListener{
 
     
 public static void main(String[] args){
-    mojimojijump mjmj = new mojimojijump();
+    tomatotomato mjmj = new tomatotomato();
     mjmj.setSize(1020,700);
-    mjmj.setTitle("mojimojijump");
+    mjmj.setTitle("tomatotomato");
     mjmj.setVisible(true);
     mjmj.setLocationRelativeTo(null);
     mjmj.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -51,9 +51,9 @@ public void actionPerformed(ActionEvent e) {
         this.setSize(1020,700);
         d.requestFocusInWindow();
         revalidate();
-
-
-
+}
+else if(e.getSource()==stg.Bext){
+    System.exit(0);
 }
 }
 }
