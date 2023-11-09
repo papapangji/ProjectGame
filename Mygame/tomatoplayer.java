@@ -10,6 +10,7 @@ public class tomatoplayer {
     public Image img;
 
 public tomatoplayer() {
+    
     this.img = new ImageIcon(getClass().getResource("/bg/idle0.png")).getImage();
 }
 public Rectangle2D getbound() {

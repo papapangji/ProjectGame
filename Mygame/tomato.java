@@ -11,14 +11,15 @@ public class tomato {
     public Image imgpt;
 
     public tomato(){
+        
         x = (int) ((Math.random() * 300) + 20);
         y = 0;
-        this.imgpt = new ImageIcon(getClass().getResource("/bg/tomato.png")).getImage();
+        this.imgpt = new ImageIcon(getClass().getResource("/bg/fruit7.png")).getImage();
         runner.start();
 }
-        private int potion = 3;
+        private int tomato = 3;
         public void move(){
-            y += potion;
+            y += tomato;
             if (y >= 1300) {
                 resetimgpt();
 
@@ -32,7 +33,7 @@ private void resetimgpt() {
 Thread runner = new Thread(new Runnable() {
     public void run() {
         while (true) {
-            y += potion;
+            y += tomato;
             if (y >= 1300) {
                 resetimgpt();
 
@@ -65,7 +66,7 @@ public Image getImage() {
     }
 
     public Rectangle2D getbound() {
-        //System.out.println(x+""+y);
+
         return (new Rectangle2D.Double(x, y, 45, 45));
     }
 }

@@ -20,24 +20,19 @@ public class Draw extends JPanel implements ActionListener{
     public tomato mt = new tomato();
     public int score = 0;
     public int timec = 90;
-    //wood w = new wood();
     
 
     public static ArrayList<tomato>mts = new ArrayList<tomato>();
-    // java.net.URL imgpotis = this.getClass().getResource("/bg/majic1.png");
-    // Image imgpotis2 = new ImageIcon(imgpotis).getImage();
     private int tomatoRi = 0;
     private int tomatoNv = 150;
-    //private int speed = 200;
+
     
     
     java.net.URL imageURL = this.getClass().getResource("bg/bgbg1.jpg");
     Image imageBg = new ImageIcon(imageURL).getImage();
     java.net.URL imageURL2 = this.getClass().getResource("bg/bg11.jpg");
     Image imageBg2 = new ImageIcon(imageURL2).getImage();
-    // java.net.URL imageURL3 = this.getClass().getResource("bg/monster0.jpg");
-    // Image imagemons = new ImageIcon(imageURL3).getImage();
-    
+
 
 
     public Thread time = new Thread(new Runnable() {
@@ -75,6 +70,8 @@ public class Draw extends JPanel implements ActionListener{
      });
     
     public Draw(){
+
+        
         this.setFocusable(true);
         this.setLayout(null);
         
@@ -109,30 +106,29 @@ public class Draw extends JPanel implements ActionListener{
 
     public void updategame(){
         tomatoRi++;
-        // System.out.println(tomatoRi);
+    
         if(tomatoRi >= tomatoNv){
             tomatoRi = 0;
-            tomato poti = new tomato();
+            tomato toma = new tomato();
 
-            poti.x = (int) (Math.random() * (getWidth() - 100));
-            poti.y = 0;
-            if(poti.x <= getWidth()){
-                mts.add(poti);
+            toma.x = (int) (Math.random() * (getWidth() - 100));
+            toma.y = 0;
+            if(toma.x <= getWidth()){
+                mts.add(toma);
             }
             
             
         }
         for(int i=0;i<mts.size();i++){
-            tomato potist = mts.get(i);
-            potist.move();
+            tomato tomast = mts.get(i);
+            tomast.move();
         }
 
         for (int i = 0; i < mts.size(); i++) {
             if (Intersect(mts.get(i).getbound(), mjp.getbound())) {
                 mts.remove(i);
                 score += 15;
-
-                //System.out.println(1);
+                                                                                              
                 
             }
         }
@@ -147,7 +143,7 @@ public class Draw extends JPanel implements ActionListener{
             e.printStackTrace();
         }
      }
-     public static void potisplus(tomato mt){
+     public static void tomasplus(tomato mt){
         mts.add(mt);
      }
     @Override

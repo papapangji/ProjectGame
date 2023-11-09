@@ -13,6 +13,7 @@ public class startgame extends JPanel{
     public JButton Bext = new JButton(exit);
 
     public startgame(){
+        
         setLayout(null);
         add(Bst);
         Bst.setBounds(405, 220, 210, 70);
